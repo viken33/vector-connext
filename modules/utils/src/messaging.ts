@@ -20,6 +20,8 @@ import {
   NATS_WS_URL,
   ConditionalTransferCreatedPayload,
   ConditionalTransferRoutingCompletePayload,
+  EngineEvent,
+  EngineEventMap,
 } from "@connext/vector-types";
 import axios, { AxiosResponse } from "axios";
 import pino, { BaseLogger } from "pino";
@@ -640,4 +642,31 @@ export class NatsMessagingService extends NatsBasicMessagingService implements I
     );
   }
   ////////////
+  // AUCTION METHODS
+
+  //  publishStartAuction(
+  //   data: Result<EngineParams.RunAuction, VectorError>,
+  //   to: string,
+  //   from: string,
+  //   ): Promise<void> {
+  //   return this.publish(`${to}.${from}.start-auction`, safeJsonStringify(data.toJson()))};
+
+  // onReceiveAuctionMessage(
+  //   myPublicIdentifier: string,
+  //   callback: (
+  //     startAuction: Result<, NodeError>,
+  //     from: string,
+  //     inbox: string,
+  //   ) => void,
+  // ): Promise<void> {
+  //   console.log(
+  //     "onReceiveTransferRoutingCompleteMessage ======> ",
+  //     `${myPublicIdentifier}.*.auction-response`,
+  //   );
+  //   return this.registerCallback(
+  //     `${myPublicIdentifier}.*.auction-response`,
+  //     callback,
+  //     "onReceiveForwardedTransferMessage",
+  //   );
+  // }
 }

@@ -14,8 +14,8 @@
 @rogerPublicIdentifier = vector8Uz1BdpA9hV5uTm6QUv5jj1PsUyCH8m8ciA94voCzsxVmrBRor
 @chainId = 1337
 
-@nodeUrl = {{carolUrl}}
-@nodePublicIdentifier = {{carolPublicIdentifier}}
+@nodeUrl = {{daveUrl}}
+@nodePublicIdentifier = {{davePublicIdentifier}}
 @counterpartyPublicIdentifier = {{rogerPublicIdentifier}}
 
 ##############
@@ -28,4 +28,20 @@ Content-Type: application/json
   "publicIdentifier": "{{nodePublicIdentifier}}",
   "chainId": "{{chainId}}",
   "timeout": "100000"
+}
+
+###
+POST http://localhost:8545
+Content-Type: application/json
+
+{
+  "jsonrpc":"2.0",
+  "method":"eth_sendTransaction",
+  "params":[{
+    "from": "0x627306090abaB3A6e1400e9345bC60c78a8BEf57",
+    "to": "0xB3AE91e456727FbF335E7ac52d7CcfB436708d8e",
+    "value": "0x16345785d8a0000",
+    "data": "0x"
+  }],
+  "id":1
 }

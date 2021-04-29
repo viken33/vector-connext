@@ -29,7 +29,7 @@ POST {{nodeUrl}}/send-deposit-tx
 Content-Type: application/json
 
 {
-  "channelAddress": "{{channel}}",
+  "channelAddress": "0x66920C67620b492C3FF7f904af6DC3a8B58D7C9C",
   "amount": "{{ethAmount}}",
   "assetId": "0x0000000000000000000000000000000000000000",
   "chainId": "{{chainId}}",

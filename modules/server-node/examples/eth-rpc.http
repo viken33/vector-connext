@@ -20,7 +20,7 @@ Content-Type: application/json
   "method":"eth_sendTransaction",
   "params":[{
     "from": "{{sugarDaddy}}",
-    "to": "{{roger}}",
+    "to": "{{carol}}",
     "value": "{{amount}}"
   }],
   "id":1
@@ -33,7 +33,7 @@ Content-Type: application/json
 {
   "jsonrpc":"2.0",
   "method":"eth_getBalance",
-  "params":["{{roger}}",  "latest"],
+  "params":["{{dave}}",  "latest"],
   "id":1
 }
 

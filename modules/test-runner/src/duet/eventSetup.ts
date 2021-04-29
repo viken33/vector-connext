@@ -10,6 +10,7 @@ import {
   WithdrawalReconciledPayload,
   WithdrawalResolvedPayload,
   ConditionalTransferRoutingCompletePayload,
+  RunAuctionPayload,
 } from "@connext/vector-types";
 
 import { env } from "../utils";
@@ -55,6 +56,7 @@ export const aliceEvts = {
     evt: Evt.create<DepositReconciledPayload>(),
     url: `${serverBase}${depositReconciledPath}-alice`,
   },
+  [EngineEvents.RUN_AUCTION_EVENT]: {},
   [ChainServiceEvents.TRANSACTION_SUBMITTED]: {},
   [ChainServiceEvents.TRANSACTION_MINED]: {},
   [ChainServiceEvents.TRANSACTION_FAILED]: {},
@@ -97,6 +99,7 @@ export const bobEvts = {
     evt: Evt.create<DepositReconciledPayload>(),
     url: `${serverBase}${depositReconciledPath}-bob`,
   },
+  [EngineEvents.RUN_AUCTION_EVENT]: {},
   [ChainServiceEvents.TRANSACTION_SUBMITTED]: {},
   [ChainServiceEvents.TRANSACTION_MINED]: {},
   [ChainServiceEvents.TRANSACTION_FAILED]: {},

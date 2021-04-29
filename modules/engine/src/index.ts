@@ -1538,6 +1538,62 @@ export class VectorEngine implements IVectorEngine {
     }
   }
 
+  // TODO finish method with messaging calls
+  // private async runAuction(
+  //   params: EngineParams.RunAuction,
+  // ): Promise<Result<ChannelRpcMethodsResponsesMap[typeof ChannelRpcMethods.chan_runAuction], VectorError>> {
+  //   const method = "runAuction";
+  //   const methodId = getRandomBytes32();
+  //   this.logger.info({ params, method, methodId }, "Method started");
+  //   const validate = ajv.compile(EngineParams.RunAuctionSchema);
+  //   const valid = validate(params);
+  //   if (!valid) {
+  //     return Result.fail(
+  //       new RpcError(RpcError.reasons.InvalidParams, params.assetId ?? "", this.publicIdentifier, {
+  //         invalidParamsError: validate.errors?.map((e) => e.message).join(","),
+  //         invalidParams: params,
+  //       }),
+  //     );
+  //   }
+
+  //  - Call `publishStartAuction` with provided data.
+  //  - Call `onReceiveAuctionMessage` to listen on unique INBOX and collect responses for 5 seconds
+  //    (will tweak and tune this number). Maybe something like wait for 5 responses or 5 seconds?
+  //    Watch out for race conditions of setting listener after message is already sent.
+  //  - Turn off listener (might need a separate method, or have `onReceiveAuctionMessage` return an `off` method.
+
+  // const channelRes = await this.getChannelState({ channelAddress: params.channelAddress });
+  // if (channelRes.isError) {
+  //   return Result.fail(channelRes.getError()!);
+  // }
+  // const channel = channelRes.getValue();
+  // if (!channel) {
+  //   return Result.fail(new RpcError(RpcError.reasons.ChannelNotFound, params.channelAddress, this.publicIdentifier));
+  // }
+  // this.logger.info({ channel, method, methodId }, "Pre-transfer channel");
+
+  // First, get translated `create` params using the passed in conditional transfer ones
+  // const createResult = await convertConditionalTransferParams(
+  //   params,
+  //   this.signer,
+  //   channel,
+  //   this.chainService,
+  //   this.messaging,
+  // );
+  // if (createResult.isError) {
+  //   return Result.fail(createResult.getError()!);
+  // }
+  // const createParams = createResult.getValue();
+  // this.logger.info({ transferParams: createParams, method, methodId }, "Created conditional transfer params");
+  // const protocolRes = await this.vector.create(createParams);
+  // if (protocolRes.isError) {
+  //   return Result.fail(protocolRes.getError()!);
+  // }
+  // const res = protocolRes.getValue();
+  // this.logger.info({ channel: res, method, methodId }, "Method complete");
+  //  return Result.ok(res);
+  // }
+
   // JSON RPC interface -- this will accept:
   // - "chan_deposit"
   // - "chan_createTransfer"
