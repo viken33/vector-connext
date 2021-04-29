@@ -91,7 +91,7 @@ Content-Type: application/json
   "assetId": "0x0000000000000000000000000000000000000000",
   "chainId": 1337,
   "recipient": "{{davePublicIdentifier}}",
-  "recipientChainId": 1337,
+  "recipientChainId": 1338,
   "recipientAssetId": "0x0000000000000000000000000000000000000000"
 }
 
